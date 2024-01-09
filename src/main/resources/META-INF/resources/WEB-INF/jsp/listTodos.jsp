@@ -2,30 +2,40 @@
 
 <html>
   <head>
-    <title>Welcome Todo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+
+    <title>List Todos Page</title>
   </head>
   <body>
-    <div>Welcome ${name}</div>
-    <div>Your todos are ${todos}</div>
-    <table>
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Description</th>
-          <th>Target Date</th>
-          <th>Is Done?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <c:forEach items="${todos}" var="todo">
+    <div class="container">
+      <h1>Your todos are:</h1>
+      <table class="table">
+        <thead>
           <tr>
-            <td>${todo.id}</td>
-            <td>${todo.description}</td>
-            <td>${todo.targetDate}</td>
-            <td>${todo.done}</td>
+            <th>id</th>
+            <th>Description</th>
+            <th>Target Date</th>
+            <th>Is Done?</th>
           </tr>
-        </c:forEach>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <c:forEach items="${todos}" var="todo">
+            <tr>
+              <td>${todo.id}</td>
+              <td>${todo.description}</td>
+              <td>${todo.targetDate}</td>
+              <td>${todo.done}</td>
+            </tr>
+          </c:forEach>
+        </tbody>
+      </table>
+      <a href="add-todo" class="btn btn-success">Add Todos</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </body>
 </html>

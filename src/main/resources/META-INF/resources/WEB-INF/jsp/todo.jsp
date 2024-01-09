@@ -1,15 +1,20 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
   <head>
-    <title>Welcome Page</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     />
+
+    <title>Add Todos Page</title>
   </head>
   <body>
     <div class="container">
-      <h1>Welcome : ${name}</h1>
-      <a href="list-todos">Manage your todos</a>
+      <h1>Enter Todo Details: </h1>
+      <form method="POST">
+        Description: <input type="text" name="description"><input type="submit" class="btn btn-success">
+      </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 

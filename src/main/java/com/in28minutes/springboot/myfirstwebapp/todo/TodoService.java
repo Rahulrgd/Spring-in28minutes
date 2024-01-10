@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.ModelMap;
 
 import jakarta.validation.Valid;
 
@@ -20,7 +23,8 @@ public class TodoService {
     }
 
     public List<Todo> findByUserName(String username){
-        return todos;
+        Predicate<? super Todo> predicate = todo->todo.getUsername().equalsIgnoreCase(username);
+        return todos.stream().filter(predicate).toList();
     }
 
     public void addTodo(String username, String description, LocalDate targetDate, boolean done){
